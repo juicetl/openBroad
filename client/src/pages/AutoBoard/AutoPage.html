@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>OpenVis</title>
+    <link rel="stylesheet" type="text/css" href="./AutoPage.css">
+    <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.3.5/build/vega.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@3.2.0/build/vega-lite.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@4.0.0/build/vega-embed.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+    <div id="autoboard">
+        <div class="flex-container column">
+            <div class="item one" @click="clickChart('1')" style="transform: translate(-27.4%, -33.5%) scale(0.33)">
+                <!--视图1-->
+            </div>
+            <div class="item two" @click="clickChart('2')" style="transform: translate(-27.4%, 0.5%) scale(0.33)">
+                <!--视图2-->
+            </div>
+            <div class="item three" @click="clickChart('3')" style="transform: translate(-27.4%, 34.5%) scale(0.33)">
+                <!--视图3-->
+            </div>
+            <div class="item four active" @click="clickChart('4')" style="transform: translate(38.7%, 0) scale(1)">
+                <!--视图4-->
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var app = new Vue({
+    el: '#autoboard',
+    data() {
+        return {
+            items: [],
+            //Dtable:table
+        }
+    },
+    mounted() {
+        this._init()
+    },
+    props: ["layout"],
+    methods: {
+        _reszie() {
+            this.$root.charts.forEach((mychart) => {
+                mychart.reszie()
+            });
+        },
+        _init() {
+            this.items = document.querySelectorAll('.flex-container .item')
+            for (let i = 0; i < this.items.length; i++) {
+                this.items[i].dataset.order = i + 1;
+            }
+            this.requsetJson();
+            
+        },
+        clickChart(chartIndex) {
+            let activeItem = document.querySelector('.flex-container .active')
+            let activeIndex = activeItem.dataset.order
+            let clickItem = this.items[chartIndex - 1]
+            if (activeIndex === chartIndex) {
+                return
+            }
+            activeItem.classList.remove('active')
+            clickItem.classList.add('active')
+            this._setStyle(clickItem, activeItem)
+        },
+        _setStyle(el1, el2) {
+            let transform1 = el1.style.transform
+            let transform2 = el2.style.transform
+            el1.style.transform = transform2
+            el2.style.transform = transform1
+        },
+        /*setgraph() {
+            vegaEmbed("#one",json);
+        }*/
+        requsetJson(){
+            /*
+            var jsonObj
+            $.ajax({
+                type: "get",//请求方式
+                url: "./table.json",//地址，就是json文件的请求路径
+                dataType: "json",//数据类型可以为 text xml json  script  jsonp
+                async: false,
+                success: function(data){//返回的参数就是 action里面所有的有get和set方法的参数
+                    jsonObj = data;
+                }
+            });
+            vegaEmbed("#item",jsonObj);
+            */
+            let requestURL = './table.json';
+            //创建一个HTTP请求对象
+            let request = new XMLHttpRequest();
+            //使用open（）打开一个新请求
+            request.open('GET', requestURL);
+            //设置XHR访问JSON格式数据，然后发送请求
+            // request.responseType = 'json';
+            //设置XHR访问text格式数据
+            request.responseType = 'text';
+            request.send();
+ 
+            //处理来自服务器的数据
+            request.onload = function() {
+                let jsonObjText = request.response;
+                let jsonObj = JSON.parse(superHeroesText);
+                vegaEmbed("#item", jsonObj);
+                // let superHeroes = request.response;
+    };
+        },
+        getJsonInfo(m) {
+            let that = this
+            this.layoutObj = JSON.parse(JSON.stringify(m))
+            this.adaptWidthHeight()
+        },
+        adaptWidthHeight() {
+            //this.layoutObj.[chartA].data.height/width
+            let that = this
+            let chartList = Object.keys()
+
+            chartList.forEach(function(d){
+                if(that.layoutObj["config"][d] != undefined){
+                    //用vega model 自带的set方法
+                    that.layoutObj["config"][d]["data"]["height"] = that.chartStyle[d]["height"]
+                    that.layoutObj["config"][d]["data"]["width"] = that.chartStyle[d]["width"]
+                    let _layer = that.layoutObj["config"][d]["data"]["layer"]
+                    //console.log("_layer", _layer)
+                    _layer.forEach(function(v){
+                        v.height = that.chartStyle[d]["height"]
+                        v.width = that.chartStyle[d]["width"]
+                    })
+                }
+            })
+            
+            this.generateGraph()
+        },
+        generateGraph() {
+            
+        }
+    },
+    components: {
+
+    }
+    })
+</script>
+</html>

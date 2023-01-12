@@ -1,0 +1,273 @@
+{
+
+    "Barchart":{
+
+        "inPorts": [
+            {"name":"x","text":"X","attr":"encoding","type":"in"},
+            {"name":"y","text":"Y","attr":"encoding","type":"in"},
+            {"name":"color","text":"Fill","attr":"encoding","type":"in"},
+            {"name":"row","text":"Row","attr":"encoding","type":"in"}
+        ],
+        "outPorts": [
+            {"name":"out","text":"out","attr":"field","type":"out"}
+        ],
+        "type": "Chart",
+        "maker": "bar"
+    },
+    "Linechart":{
+
+        "inPorts": [
+            {"name":"x","text":"X","attr":"encoding","type":"in"},
+            {"name":"y","text":"Y","attr":"encoding","type":"in"},
+            {"name":"stroke","text":"Stroke","attr":"encoding","type":"in"},
+            {"name":"row","text":"Row","attr":"encoding","type":"in"}
+        ],
+        "outPorts": [
+            {"name":"out","text":"out","attr":"field","type":"out"}
+        ],
+        "type":"Chart",
+        "maker": "line"
+    },
+    "Scatterplot":{
+        "inPorts": [
+            {"name":"x","text":"X","attr":"encoding","type":"in"},
+            {"name":"y","text":"Y","attr":"encoding","type":"in"},
+            {"name":"fill","text":"Fill","attr":"encoding","type":"in"},
+            {"name":"size","text":"Size","attr":"encoding","type":"in"},
+            {"name":"shape", "text":"shape", "attr": "encoding", "type":"in"}
+        ],
+        "outPorts": [
+            {"name":"out","text":"out","attr":"field","type":"out"}
+        ],
+        "type":"Chart",
+        "maker": "point"
+    },
+    "Stripplot":{
+
+        "inPorts": [
+            {"name":"x","text":"X","attr":"encoding","type":"in"},
+            {"name":"y","text":"Y","attr":"encoding","type":"in"},
+            {"name":"stroke","text":"Stroke","attr":"encoding","type":"in"},
+            {"name":"row","text":"Row","attr":"encoding","type":"in"}
+        ],
+        "outPorts": [
+            {"name":"out","text":"out","attr":"field","type":"out"}
+        ],
+        "type":"Chart",
+        "maker": "tick"
+    },
+    "Boxplot":{
+
+        "inPorts": [
+            {"name":"x","text":"X","attr":"encoding","type":"in"},
+            {"name":"y","text":"Y","attr":"encoding","type":"in"},
+            {"name":"stroke","text":"Stroke","attr":"encoding","type":"in"},
+            {"name":"row","text":"Row","attr":"encoding","type":"in"}
+        ],
+        "outPorts": [
+            {"name":"out","text":"out","attr":"field","type":"out"}
+        ],
+        "type":"Chart",
+        "maker": "boxplot"
+    },
+    "Areaplot":{
+        "inPorts": [
+            {"name":"x","text":"X","attr":"encoding","type":"in"},
+            {"name":"y","text":"Y","attr":"encoding","type":"in"},
+            {"name":"color","text":"Stroke","attr":"encoding","type":"in"}
+        ],
+        "outPorts": [
+            {"name":"out","text":"out","attr":"field","type":"out"}
+        ],
+        "type":"Chart",
+        "maker": "area"
+    },
+    "Circle":{
+        "inPorts": [
+            {"name":"x","text":"X","attr":"encoding","type":"in"},
+            {"name":"y","text":"Y","attr":"encoding","type":"in"},
+            {"name":"color","text":"Stroke","attr":"encoding","type":"in"}
+        ],
+        "outPorts": [
+            {"name":"out","text":"out","attr":"field","type":"out"}
+        ],
+        "type":"Chart",
+        "maker": "circle"
+    },
+    "ErrorBar":{
+        "inPorts": [
+            {"name":"x","text":"X","attr":"encoding","type":"in"},
+            {"name":"y","text":"Y","attr":"encoding","type":"in"}
+        ],
+        "outPorts": [
+            {"name":"out","text":"out","attr":"field","type":"out"}
+        ],
+        "type":"Chart",
+        "maker": "errorbar"
+    },
+    "ErrorBand":{
+        "inPorts": [
+            {"name":"x","text":"X","attr":"encoding","type":"in"},
+            {"name":"y","text":"Y","attr":"encoding","type":"in"}
+        ],
+        "outPorts": [
+            {"name":"out","text":"out","attr":"field","type":"out"}
+        ],
+        "type":"Chart",
+        "maker": "errorband"
+    },
+    "Reacplot":{
+        "inPorts": [
+            {"name":"x","text":"X","attr":"encoding","type":"in"},
+            {"name":"y","text":"Y","attr":"encoding","type":"in"},
+            {"name":"color","text":"Stroke","attr":"encoding","type":"in"}
+        ],
+        "outPorts": [
+            {"name":"out","text":"out","attr":"field","type":"out"}
+        ],
+        "type":"Chart",
+        "maker": "rect"
+    },
+
+    "Map":{
+      "inPorts": [
+        {"name":"x","text":"X","attr":"encoding","type":"in"},
+        {"name":"y","text":"Y","attr":"encoding","type":"in"},
+        {"name":"color","text":"Stroke","attr":"encoding","type":"in"}
+      ],
+      "outPorts": [
+        {"name":"out","text":"out","attr":"field","type":"out"}
+      ],
+      "type":"Chart",
+      "maker": "rect"
+    },
+  "DataPanel":{
+    "inPorts": [
+      {"name":"x","text":"X","attr":"encoding","type":"in"},
+      {"name":"y","text":"Y","attr":"encoding","type":"in"},
+      {"name":"color","text":"Stroke","attr":"encoding","type":"in"}
+    ],
+    "outPorts": [
+      {"name":"out","text":"out","attr":"field","type":"out"}
+    ],
+    "type":"Chart",
+    "maker": "rect"
+  },
+  "CTable":{
+    "inPorts": [
+      {"name":"x","text":"X","attr":"encoding","type":"in"},
+      {"name":"y","text":"Y","attr":"encoding","type":"in"},
+      {"name":"color","text":"Stroke","attr":"encoding","type":"in"}
+    ],
+    "outPorts": [
+      {"name":"out","text":"out","attr":"field","type":"out"}
+    ],
+    "type":"Chart",
+    "maker": "rect"
+  },
+
+    "Color":{
+        "inPorts": [
+            {"name":"In","text":"In","attr":"field" ,"type":"in"}
+        ],
+        "outPorts": [
+            {"name":"Out","text":"Out","attr":"field","type":"out"}
+        ],
+        "type":"Operator"
+    },
+    "Sum":{
+        "inPorts": [
+            {"name":"Num A","text":"Num A","attr":"operator","type":"in"},
+            {"name":"Num B","text":"Num B","attr":"operator","type":"in"}
+        ],
+        "outPorts": [
+            {"name":"Sum","text":"Sum","attr":"field","type":"out"}
+        ],
+        "type":"Caculator"
+    },
+    "Reduce":{
+
+        "inPorts": [
+            {"name":"Num A","text":"Num A","attr":"operator","type":"in"},
+            {"name":"Num B","text":"Num B","attr":"operator","type":"in"}
+        ],
+        "outPorts": [
+            {"name":"Reduce","text":"Reduce","attr":"field","type":"out"}
+        ],
+        "type":"Caculator"
+    },
+    "Multi":{
+
+        "inPorts": [
+            {"name":"Num A","text":"Num A","attr":"operator","type":"in"},
+            {"name":"Num B","text":"Num B","attr":"operator","type":"in"}
+        ],
+        "outPorts": [
+            {"name":"Multi","text":"Multi","attr":"field","type":"out"}
+        ],
+        "type":"Caculator"
+    },
+    "Division":{
+      "inPorts": [
+        {"name":"Num A","text":"Num A","attr":"operator","type":"in"},
+        {"name":"Num B","text":"Num B","attr":"operator","type":"in"}
+      ],
+      "outPorts": [
+        {"name":"Division","text":"Division","attr":"field","type":"out"}
+      ],
+      "type":"Caculator"
+    },
+    "Table":{
+        "inPorts": [],
+        "outPorts": [],
+        "type":"Data"
+    },
+    "Filter":{
+
+        "inPorts": [
+            {"name":"dimension","text":"Dim","attr":"processor","type":"in"}
+        ],
+        "outPorts": [
+            {"name":"output","text":"Output","attr":"processor","type":"out"}
+        ],
+        "type":"Processor"
+    },
+    "Log":{
+
+        "inPorts": [
+            {"name":"dim","text":"Dim","attr":"processor","type":"in"}
+        ],
+        "outPorts": [
+            {"name":"output","text":"Output","attr":"field","type":"out"}
+        ],
+        "type":"Processor"
+    },
+    "Viewer":{
+        "inPorts":[
+            {"name":"dim","text":"input","attr":"viewer","type":"in"}
+        ],
+        "outPorts": [
+            {"name":"output","text":"Output","attr":"field","type":"out"}
+        ],
+        "type":"Viewer"
+    },
+    "Template A":{
+        "inPorts":[
+            {"name":"chart_a","text":"chartA","attr":"Layout","type":"in"},
+            {"name":"chart_b","text":"chartB","attr":"Layout","type":"in"},
+            {"name":"chart_c","text":"chartC","attr":"Layout","type":"in"},
+            {"name":"chart_d","text":"chartD","attr":"Layout","type":"in"}
+        ],
+
+        "type":"Layout"
+    },
+    "Template B":{
+        "inPorts":[
+            {"name":"chart_a","text":"chartA","attr":"Layout","type":"in"},
+            {"name":"chart_b","text":"chartB","attr":"Layout","type":"in"},
+            {"name":"chart_c","text":"chartC","attr":"Layout","type":"in"},
+            {"name":"chart_d","text":"chartD","attr":"Layout","type":"in"}
+        ],
+        "type":"Layout"
+    }
+}
